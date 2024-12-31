@@ -38,11 +38,21 @@ function Home() {
       >
         Book Search Assignment
       </Typography>
-      <SearchBar
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        onSearch={handleSearch}
-      />
+      <Box
+        sx={{
+          marginTop: "60px",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <SearchBar
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          onSearch={handleSearch}
+        />
+      </Box>
     </Box>
   );
 }
