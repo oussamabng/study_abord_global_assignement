@@ -37,7 +37,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           </InputAdornment>
         ),
       }}
-      sx={{ width: "100%", maxWidth: 400 }}
+      sx={{ width: "100%", maxWidth: { xs: "100%", sm: 400 } }}
     />
   );
 };

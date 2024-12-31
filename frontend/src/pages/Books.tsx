@@ -75,6 +75,8 @@ const Books: React.FC = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          flexDirection: { xs: "column", sm: "row" },
+          gap: 2,
           marginBottom: 4,
         }}
       >
@@ -82,7 +84,10 @@ const Books: React.FC = () => {
           component="img"
           src="/logo.svg"
           alt="SAG Logo"
-          sx={{ width: 150 }}
+          sx={{
+            width: { xs: 100, sm: 150 },
+            marginBottom: { xs: 2, sm: 0 },
+          }}
         />
         <SearchBar
           value={searchQuery}
@@ -107,7 +112,12 @@ const Books: React.FC = () => {
               <MenuItem value="old">Oldest</MenuItem>
             </Select>
           </Box>
-          <Paper sx={{ width: "100%", overflow: "hidden" }}>
+          <Paper
+            sx={{
+              width: "100%",
+              overflow: "auto",
+            }}
+          >
             <TableContainer>
               <Table>
                 <TableHead>
@@ -145,6 +155,13 @@ const Books: React.FC = () => {
               onPageChange={handleChangePage}
               rowsPerPage={limitParam}
               onRowsPerPageChange={handleChangeRowsPerPage}
+              sx={{
+                "& .MuiTablePagination-toolbar": {
+                  flexDirection: { xs: "column", sm: "row" },
+                  alignItems: { xs: "start", sm: "center" },
+                  gap: 2,
+                },
+              }}
             />
           </Paper>
         </>
